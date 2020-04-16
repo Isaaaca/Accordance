@@ -254,7 +254,7 @@ You look to the merchant to help you, but he returns your look with disbelief. H
 ]\
 |bothgood)[He invites you to stay at the best inn in town, and offers to pay for your stay. The brigand problem seems to have troubled the town for a long time.
 
-After consideration, the girl asks to follow you on your journey and to train her in fighting. You agree the proposal.
+After consideration, the girl asks to follow you on your journey and to train her in fighting. You agree the to proposal.
 
 The merchant heads off to meet his clients. You may not see him in a long time.
 
@@ -324,7 +324,7 @@ She lets go. $girlSpeak[&quot;I was wondering if a soiled girl like me could eve
 |one)[The conversation drifts to the encounter with the bandits.
 $merchSpeak[&quot;Sometimes brigands will post quests with a bounty on themselves, to lure adventurers like you.&quot;]
 $merchSpeak[&quot;If they did, they were unlucky to have encountered you. Lucky for //me// though. I&#39;m still alive and not rotting at the side of the road(if:$target is &#39;necks&#39;)[, unlike them now].&quot;]\
-(if:$trustM &lt;0)[As he said that, a look frustration flashed across his face.]
+(if:$trustM &lt;0)[As he said that, a look of frustration flashed across his face.]
 
 |=
 |trust1&gt;[It is a good thing that you were here to protect him.] (click:?trust1)[(replace:?distrust1)[](show:?calling)(show:?remainder)(set:$trustM to it+3)]
@@ -349,7 +349,7 @@ $merchSpeak[&quot;You saved my life! You must accept it.&quot;]
 |ring)[You receive the ring with gratitude and wear it on your own thumb. It shall serve as a reminder of your calling to help others.]|shove)[You try to shake off his grip. The merchant is surprisingly strong. You accidentally throw him to the ground, bruising him. (t8n:&#39;dissolve&#39;)+(t8n-time:5s)+$merchSpeak[&quot;I am sorry.&quot;]You help him up.]\
 ]\
 |three)[You talk about plans after reaching town, and especially about the lass.$merchSpeak[&quot;Don&#39;t worry so much friend. She is of age, and can take care of herself. Women are tougher than you think. Heck, some even join the brigands to become bait for travellers.&quot;]\
-You ask if more can be could be done for the girl.
+You ask if more could be done for the girl.
 $merchSpeak[&quot;The poor often sell themselves into servitude. That&#39;s the only way they can be guaranteed food, shelter and protection.&quot;]\
 $merchSpeak[&quot;That is the reality of life. //Only death can release us from this nightmare.// Don&#39;t worry, most people treat their slaves reasonably. No point harming those who are helping you.&quot;]
 |=
@@ -370,7 +370,7 @@ $merchSpeak[&quot;That is the reality of life. //Only death can release us from 
 (else-if: $merchEvent is 3)[(show:?three)]
 (else:)[(show:?four)(show:?remainder)]
 (set: $merchEvent to it+1)
-}</tw-passagedata><tw-passagedata pid="12" name="Spend Day" tags="" position="1500,700" size="100,100">The merchant wakes you up.\
+}</tw-passagedata><tw-passagedata pid="12" name="Spend Day" tags="" position="1520,756.6666666666666" size="100,100">The merchant wakes you up.\
 (if: $daysleft &gt; 0)[$merchSpeak[&quot;Today it&#39;s (either: &#39;roasted&#39;, &#39;broiled&#39;, &#39;boiled&#39;, &#39;smoked&#39;, &#39;preserved&#39;) (either: &#39;chicken&#39;, &#39;rabbit&#39;, &#39;boar&#39;, &#39;turkey&#39;, &#39;pheasant&#39;, &#39;duck&#39;, &#39;eggs&#39;). There&#39;s some (either: &#39;mead&#39;, &#39;beer&#39;, &#39;wine&#39;, &#39;soup&#39;, &#39;cider&#39;, &#39;ale&#39;, &#39;lager&#39;) if it suits your fancy.&quot;]](else:)[
 ]
 {(if:$daysleft &gt; 4)
@@ -534,7 +534,7 @@ $c2continue[(replace: ?toReplace)[(either: ..._encounter)
 
 The night is peaceful. As the dawn breaks, you return to the caravan.
 
-[[Rest-&gt;Spend Day]]
+(t8n-depart: &quot;dissolve&quot;)+(t8n-time:1s)[[Rest-&gt;Sleep]]
 ]]
 (replace:?Sidebar)[
 &lt;img width=&quot;100%&quot; src=&quot;moon.jpg&quot;&gt;
@@ -556,7 +556,7 @@ Too bad real life is a nightmare.
 
 
 ==&gt;
-^^~~Ending~~ 2 of 4^^</tw-passagedata></tw-storydata>
+^^~~Ending~~ 2 of 4^^</tw-passagedata><tw-passagedata pid="22" name="Sleep" tags="" position="1518.3333333333333,603.3333333333334" size="100,100">[[...-&gt;Spend Day]] </tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
